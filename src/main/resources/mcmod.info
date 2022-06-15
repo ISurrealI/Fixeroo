@@ -1,0 +1,13 @@
+[
+{
+  "modid": "",
+  "name": "",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Surreal"],
+  "logoFile": ""
+}
+]
