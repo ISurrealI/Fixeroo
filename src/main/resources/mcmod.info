@@ -1,12 +1,11 @@
 [
 {
-  "modid": "",
-  "name": "",
+  "modid": "xporbclump",
+  "name": "XP Orb Clump",
   "description": "",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
+  "url": "https://github.com/ISurrealI/XpOrbClump",
   "authorList": ["Surreal"],
   "logoFile": ""
 }

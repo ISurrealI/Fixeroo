@@ -10,10 +10,10 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "1.0"
-group = "surreal.modid"
-archivesBaseName = "modid"
+group = "surreal.xporbclump"
+archivesBaseName = "XPOrbClump"
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
 }
@@ -23,6 +23,10 @@ minecraft {
     runDir = "run"
     mappings = "snapshot_20171003"
     makeObfSourceJar = false
+
+    def args = '-Dfml.coreMods.load=surreal.xporbclump.core.ClumpLoadingPlugin'
+    clientJvmArgs.add(args)
+    serverJvmArgs.add(args)
 }
 
 repositories {
