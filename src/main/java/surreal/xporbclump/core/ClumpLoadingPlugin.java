@@ -1,6 +1,7 @@
 package surreal.xporbclump.core;
 
 import net.minecraftforge.common.ForgeVersion;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,6 +15,7 @@ import java.util.Map;
 public class ClumpLoadingPlugin implements IFMLLoadingPlugin {
     public static final String NAME = "XPOrbClump";
     public static final Logger LOGGER = LogManager.getLogger(NAME);
+    public static boolean deobf = FMLLaunchHandler.isDeobfuscatedEnvironment();
 
     @Override
     public String[] getASMTransformerClass() {

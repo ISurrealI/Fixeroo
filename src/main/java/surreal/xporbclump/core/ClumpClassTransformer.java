@@ -44,7 +44,7 @@ public class ClumpClassTransformer implements IClassTransformer {
 
     public static void entityXPOrb(ClassNode cls) {
         for (MethodNode method : cls.methods) {
-            if (method.name.equals("onUpdate")) {
+            if (method.name.equals(ClumpLoadingPlugin.deobf ? "onUpdate" : "func_70071_h_")) {
                 AbstractInsnNode node = null;
 
                 for (AbstractInsnNode n : method.instructions.toArray()) {
@@ -59,12 +59,12 @@ public class ClumpClassTransformer implements IClassTransformer {
                     list.add(new VarInsnNode(ALOAD, 0));
                     list.add(new MethodInsnNode(INVOKESTATIC, HOOKS, "updateXPOrb", "(Lnet/minecraft/entity/item/EntityXPOrb;)V", false));
                     method.instructions.insertBefore(node, list);
-                } else ClumpLoadingPlugin.LOGGER.error("Searched node is null!");
+                }
 
                 if (!XPOrbConfig.general.removeCooldown) break;
             }
 
-            if (method.name.equals("onCollideWithPlayer")) {
+            if (method.name.equals(ClumpLoadingPlugin.deobf ? "onCollideWithPlayer" : "func_70100_b_")) {
                 int start = -1;
                 int end = -1;
 
@@ -82,7 +82,7 @@ public class ClumpClassTransformer implements IClassTransformer {
                         method.instructions.remove(nodes.next());
                         i++;
                     }
-                } else ClumpLoadingPlugin.LOGGER.error("Couldn't find start and end!");
+                }
 
                 break;
             }

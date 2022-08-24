@@ -49,3 +49,13 @@ processResources {
         exclude 'mcmod.info'
     }
 }
+
+jar {
+    manifest {
+        attributes([
+                "FMLCorePluginContainsFMLMod": true,
+                "FMLCorePlugin": 'surreal.xporbclump.core.ClumpLoadingPlugin',
+                "ForceLoadAsMod": true
+        ])
+    }
+}
