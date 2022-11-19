@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.registries.GameData;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 @Mod(modid = XPOrbClump.MODID, name = XPOrbClump.NAME, version = XPOrbClump.VERSION)
