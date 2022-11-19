@@ -2,13 +2,17 @@ package surreal.xporbclump;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.registries.GameData;
 
 import java.util.List;
 
@@ -37,6 +41,16 @@ public class XPOrbClump {
                 EntityXPOrb xpOrb = orbs.get(0);
                 xpOrb.xpValue = orb.xpValue;
                 event.setCanceled(true);
+            }
+        }
+    }
+    
+    @SubscribeEvent
+    public void remapLegacyClumps(@Nonnull RegistryEvent.MissingMappings<EntityEntry> event) {
+        for(RegistryEvent.MissingMappings.Mapping<EntityEntry> mapping : event.getAllMappings()) {
+            if(mapping.key.equals(new ResourceLocation("clumps", "xp_orb_big"))) {
+                mapping.remap(GameData.getEntityRegistry().getValue(2));
+                return;
             }
         }
     }
