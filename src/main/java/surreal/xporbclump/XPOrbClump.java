@@ -21,7 +21,7 @@ import java.util.List;
 public class XPOrbClump {
     public static final String MODID = "xporbclump";
     public static final String NAME = "XP Orb Clump";
-    public static final String VERSION = "1.1";
+    public static final String VERSION = "1.2";
 
     @Mod.EventHandler
     public void construction(FMLConstructionEvent event) {
