@@ -1,2 +1,2 @@
-# XpOrbClump
-A mod that clumps xp orbs together to reduce lag
+# Fixeroo
+A mod with some fixes and optimization
