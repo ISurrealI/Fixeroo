@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        jcenter()
         maven { url = "https://files.minecraftforge.net/maven" }
     }
     dependencies {
@@ -9,9 +8,9 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.2"
-group = "surreal.xporbclump"
-archivesBaseName = "XPOrbClump"
+version = "1.3"
+group = "surreal.fixeroo"
+archivesBaseName = "Fixeroo"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
@@ -21,10 +20,10 @@ compileJava {
 minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
-    mappings = "snapshot_20171003"
+    mappings = "stable_39"
     makeObfSourceJar = false
 
-    def args = '-Dfml.coreMods.load=surreal.xporbclump.core.ClumpLoadingPlugin'
+    def args = '-Dfml.coreMods.load=surreal.fixeroo.core.FixerooPlugin'
     clientJvmArgs.add(args)
     serverJvmArgs.add(args)
 }
@@ -54,7 +53,7 @@ jar {
     manifest {
         attributes([
                 "FMLCorePluginContainsFMLMod": true,
-                "FMLCorePlugin": 'surreal.xporbclump.core.ClumpLoadingPlugin',
+                "FMLCorePlugin": 'surreal.fixeroo.core.FixerooPlugin',
                 "ForceLoadAsMod": true
         ])
     }
