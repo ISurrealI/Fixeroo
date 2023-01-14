@@ -21,7 +21,7 @@ import java.util.List;
 public class FixerooHooks {
     public static final Predicate<BlockWorldState> ANY = state -> true;
 
-    public static void updateXPOrb(EntityXPOrb orb) {
+    public static void EntityXPOrb$update(EntityXPOrb orb) {
         World world = orb.world;
         double a = FixerooConfig.xpOrbClump.size/2;
 
@@ -33,7 +33,7 @@ public class FixerooHooks {
         }
     }
 
-    public static void trySpawnGolem$BlockPumpkin(BlockPattern snowman, BlockPattern ironGolem, World worldIn, BlockPos pos) {
+    public static void BlockPumpkin$trySpawnGolem(BlockPattern snowman, BlockPattern ironGolem, World worldIn, BlockPos pos) {
         Block blockBelow = worldIn.getBlockState(pos.down()).getBlock();
         boolean isSnowMan = false;
 

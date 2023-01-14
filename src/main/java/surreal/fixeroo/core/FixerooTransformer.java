@@ -54,7 +54,7 @@ public class FixerooTransformer implements IClassTransformer {
 
                 if (node != null) {
                     method.instructions.insertBefore(node, new VarInsnNode(ALOAD, 0));
-                    method.instructions.insertBefore(node, new MethodInsnNode(INVOKESTATIC, HOOKS, "updateXPOrb", "(Lnet/minecraft/entity/item/EntityXPOrb;)V", false));
+                    method.instructions.insertBefore(node, new MethodInsnNode(INVOKESTATIC, HOOKS, "EntityXPOrb$update", "(Lnet/minecraft/entity/item/EntityXPOrb;)V", false));
                 }
             }
 
@@ -171,7 +171,7 @@ public class FixerooTransformer implements IClassTransformer {
                     // -----------
                     list.add(new VarInsnNode(ALOAD, 1));
                     list.add(new VarInsnNode(ALOAD, 2));
-                    list.add(new MethodInsnNode(INVOKESTATIC, HOOKS, "trySpawnGolem$BlockPumpkin", "(Lnet/minecraft/block/state/pattern/BlockPattern;Lnet/minecraft/block/state/pattern/BlockPattern;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", false));
+                    list.add(new MethodInsnNode(INVOKESTATIC, HOOKS, "BlockPumpkin$trySpawnGolem", "(Lnet/minecraft/block/state/pattern/BlockPattern;Lnet/minecraft/block/state/pattern/BlockPattern;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", false));
 
                     method.instructions.insertBefore(node, list);
                 }
