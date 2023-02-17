@@ -8,7 +8,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.3"
+version = project.mod_version
 group = "surreal.fixeroo"
 archivesBaseName = "Fixeroo"
 
@@ -26,6 +26,9 @@ minecraft {
     def args = '-Dfml.coreMods.load=surreal.fixeroo.core.FixerooPlugin'
     clientJvmArgs.add(args)
     serverJvmArgs.add(args)
+
+    replace('@VERSION@', project.mod_version)
+    replaceIn("Fixeroo.java")
 }
 
 repositories {
@@ -36,17 +39,16 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
 
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
                 
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version':project.version
     }
         
-    from(sourceSets.main.resources.srcDirs) {
+ /*   from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
-    }
+    }*/
 }
 
 jar {

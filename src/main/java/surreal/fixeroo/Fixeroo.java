@@ -3,13 +3,14 @@ package surreal.fixeroo;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import surreal.fixeroo.events.EventXPOrb;
 
-@Mod(modid = Fixeroo.MODID, name = Fixeroo.NAME, version = Fixeroo.VERSION)
+@Mod(modid = Fixeroo.MODID, name = "Fixeroo", version = "@VERSION@")
 public class Fixeroo {
     public static final String MODID = "xporbclump";
-    public static final String NAME = "Fixeroo";
-    public static final String VERSION = "1.3";
+    public static Logger LOGGER = LogManager.getLogger(MODID);
 
     @Mod.EventHandler
     public void construction(FMLConstructionEvent event) {

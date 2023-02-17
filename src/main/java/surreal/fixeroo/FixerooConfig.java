@@ -15,10 +15,12 @@ public class FixerooConfig {
         public boolean removeCooldown = true;
 
         @Config.Comment("Size of checking area")
-        public double size = 4D;
+        public double areaSize = 4D;
 
         @Config.Comment("How many xp orbs can be in that area")
-        public int orbCount = 1;
+        public int maxOrbCount = 1;
+
+        public boolean changeOrbSize = false;
     }
 
     public static class GolemTweaks {

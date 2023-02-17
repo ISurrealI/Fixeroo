@@ -23,10 +23,10 @@ public class EventXPOrb {
 
         if (entity instanceof EntityXPOrb) {
             EntityXPOrb orb = (EntityXPOrb) entity;
-            double a = FixerooConfig.xpOrbClump.size/2;
+            double a = FixerooConfig.xpOrbClump.areaSize/2;
 
             List<EntityXPOrb> orbs = world.getEntitiesWithinAABB(EntityXPOrb.class, new AxisAlignedBB(orb.posX-a, orb.posY-a, orb.posZ-a, orb.posX+a, orb.posY+a, orb.posZ+a));
-            if (orbs.size() >= FixerooConfig.xpOrbClump.orbCount && !world.isRemote) {
+            if (orbs.size() >= FixerooConfig.xpOrbClump.maxOrbCount && !world.isRemote) {
                 EntityXPOrb xpOrb = orbs.get(0);
                 xpOrb.xpValue += orb.xpValue;
                 event.setCanceled(true);
