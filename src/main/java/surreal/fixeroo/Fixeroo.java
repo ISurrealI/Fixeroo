@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import surreal.fixeroo.events.EventXPOrb;
 
+@Mod.EventBusSubscriber
 @Mod(modid = Fixeroo.MODID, name = "Fixeroo", version = "@VERSION@")
 public class Fixeroo {
     public static final String MODID = "xporbclump";

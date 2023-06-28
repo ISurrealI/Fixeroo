@@ -21,7 +21,6 @@ import java.util.List;
 
 @SuppressWarnings("unused")
 public class FixerooHooks {
-    private static final Logger LOGGER = LogManager.getLogger("Fixeroo");
 
     public static void EntityXPOrb$onUpdate(EntityXPOrb orb) {
         World world = orb.world;

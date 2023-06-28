@@ -24,7 +24,7 @@ public class FixerooConfig {
     }
 
     public static class GolemTweaks {
-        @Config.Comment("Enable Golem Tweaks. (Some optimizations and fixes)")
+        @Config.Comment("Enable fixes to golem")
         public boolean enable = true;
     }
 }
